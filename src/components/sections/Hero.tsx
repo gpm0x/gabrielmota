@@ -181,7 +181,7 @@ const Hero: React.FC = () => {
                       <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-gray-800 to-black p-1 shadow-xl ring-4 ring-white/5">
                         <div className="w-full h-full bg-black rounded-xl flex items-center justify-center overflow-hidden relative">
                           <img
-                            src="/src/assets/images/gabriel.png"
+                            src="/images/gabriel.png"
                             alt="Gabriel Mota"
                             className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110"
                           />

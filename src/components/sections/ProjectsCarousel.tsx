@@ -7,7 +7,7 @@ const PROJECTS = [
         id: 1,
         title: "GlobalBank",
         description: "Landing page de alto padrão para uma banco digital chamado GlobalBank. Objetivo de conversão e experiência do usuário fluida.",
-        image: "/src/assets/images/globalbank.png",
+        image: "/images/globalbank.png",
         tags: ["React", "Framer Motion", "Tailwind"],
         link: "https://globalbankai.vercel.app/",
         accent: "from-indigo-600 to-purple-600"
@@ -16,7 +16,7 @@ const PROJECTS = [
         id: 2,
         title: "Clube do Livro",
         description: "Página de vendas de alta conversão para um produto digital para vender livros em PDF.",
-        image: "/src/assets/images/clubedolivro.png",
+        image: "/images/clubedolivro.png",
         tags: ["TypeScript", "Next.js", "UI/UX Design"],
         link: "https://clubedoslivros.vercel.app/",
         accent: "from-blue-600 to-cyan-500"
@@ -25,7 +25,7 @@ const PROJECTS = [
         id: 3,
         title: "Shadows E-sports",
         description: "Landing page de alto padrão para plataforma de IA focada em nutrição. Design minimalista com foco em conversão e experiência do usuário fluida.",
-        image: "/src/assets/images/shadows.png",
+        image: "/images/shadows.png",
         tags: ["Web3", "Node.js", "D3.js"],
         link: "https://shadows-esports.vercel.app/",
         accent: "from-green-500 to-emerald-700"

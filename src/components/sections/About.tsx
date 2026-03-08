@@ -19,7 +19,7 @@ const About: React.FC = () => {
             <div className="relative aspect-[3/4] rounded-[1.8rem] overflow-hidden bg-white shadow-2xl shadow-gray-200/50 border border-white">
               <div className="w-full h-full bg-gray-100 flex items-center justify-center relative overflow-hidden">
                 <img
-                  src="/src/assets/images/gabriel.png"
+                  src="/images/gabriel.png"
                   alt="Gabriel Mota"
                   className="absolute inset-0 w-full h-full object-cover object-top transition-all duration-700 hover:scale-105"
                 />
