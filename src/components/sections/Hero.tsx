@@ -212,9 +212,6 @@ const Hero: React.FC = () => {
                     <p>
                       Sócio e Co-founder<span className="text-white font-semibold"> do DietAI</span>
                     </p>
-                    <p>
-                      Founder <span className="text-white font-semibold"> da GROWFYAI</span>
-                    </p>
                   </div>
                 </div>
 

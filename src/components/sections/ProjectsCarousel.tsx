@@ -24,10 +24,19 @@ const PROJECTS = [
     {
         id: 3,
         title: "Shadows E-sports",
-        description: "Landing page de alto padrão para plataforma de IA focada em nutrição. Design minimalista com foco em conversão e experiência do usuário fluida.",
+        description: "Landing page de alto padrão para empresa Shadows E-sports. Objetivo é mostrar sobre mais sobre essa organização do mundo de esport.",
         image: "/images/shadows.png",
         tags: ["Web3", "Node.js", "D3.js"],
         link: "https://shadows-esports.vercel.app/",
+        accent: "from-green-500 to-emerald-700"
+    },
+    {
+        id: 4,
+        title: "DietAI",
+        description: "Landing page de alto padrão para plataforma de IA focada em nutrição. Design minimalista com foco em conversão e experiência do usuário fluida.",
+        image: "/images/dietal.png",
+        tags: ["Web3", "Node.js", "D3.js"],
+        link: "https://diet-ai-steel.vercel.app/",
         accent: "from-green-500 to-emerald-700"
     }
 ];
