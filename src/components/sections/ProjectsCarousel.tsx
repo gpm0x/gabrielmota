@@ -2,13 +2,19 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Globe, ArrowRight, Layout, Sparkles } from 'lucide-react';
 
+import globalBankImg from '../../assets/images/globalbank.png';
+import clubeDoLivroImg from '../../assets/images/clubedolivro.png';
+import shadowsImg from '../../assets/images/shadows.png';
+import dietAIImg from '../../assets/images/dietai.png';
+import elielNicolasImg from '../../assets/images/elielnicolas.png';
+import ecommerceImg from '../../assets/images/ecommerce.png';
 
 const PROJECTS = [
     {
         id: 1,
         title: "GlobalBank",
         description: "Landing page de alto padrão para uma banco digital chamado GlobalBank. Objetivo de conversão e experiência do usuário fluida.",
-        image: "/src/assets/images/globalbank.png",
+        image: globalBankImg,
         tags: ["React", "Framer Motion", "Tailwind"],
         link: "https://globalbankai.vercel.app/",
         accent: "from-indigo-600 to-purple-600"
@@ -17,7 +23,7 @@ const PROJECTS = [
         id: 2,
         title: "Clube do Livro",
         description: "Página de vendas de alta conversão para um produto digital para vender livros em PDF.",
-        image: "/src/assets/images/clubedolivro.png",
+        image: clubeDoLivroImg,
         tags: ["TypeScript", "Next.js", "UI/UX Design"],
         link: "https://clubedoslivros.vercel.app/",
         accent: "from-blue-600 to-cyan-500"
@@ -26,7 +32,7 @@ const PROJECTS = [
         id: 3,
         title: "Shadows E-sports",
         description: "Landing page de alto padrão para empresa Shadows E-sports. Objetivo é mostrar sobre mais sobre essa organização do mundo de esport.",
-        image: "/src/assets/images/shadows.png",
+        image: shadowsImg,
         tags: ["ReactJS", "TypeScript", "Framer Motion", "TailwindCSS"],
         link: "https://shadows-esports.vercel.app/",
         accent: "from-green-500 to-emerald-700"
@@ -35,7 +41,7 @@ const PROJECTS = [
         id: 4,
         title: "DietAI",
         description: "Landing page de alto padrão para plataforma de IA focada em nutrição. Design minimalista com foco em conversão e experiência do usuário fluida.",
-        image: "/src/assets/images/dietai.png",
+        image: dietAIImg,
         tags: ["React Native", "ReactJS", "Tailwind"],
         link: "https://dietai-pearl.vercel.app/",
         accent: "from-green-500 to-emerald-700"
@@ -44,7 +50,7 @@ const PROJECTS = [
         id: 5,
         title: "Eliel Nicolas",
         description: "Landing page de alto padrão para Eliel Nicolas. Objetivo é mostrar mais sobre este empreendedor.",
-        image: "/src/assets/images/elielnicolas.png",
+        image: elielNicolasImg,
         tags: ["ReactJS", "TypeScript", "Framer Motion", "Tailwind"],
         link: "https://elielnicolas.com.br/",
         accent: "from-green-500 to-emerald-700"
@@ -53,7 +59,7 @@ const PROJECTS = [
         id: 6,
         title: "Livia Tupinamba",
         description: "Ecommerce de lingerie, focado em conversão e experiência do usuário fluida.",
-        image: "/src/assets/images/ecommerce.png",
+        image: ecommerceImg,
         tags: ["ReactJS", "TypeScript", "Framer Motion", "Tailwind"],
         link: "https://liviatupinamba.com.br/",
         accent: "from-pink-500 to-rose-700"
