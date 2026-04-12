@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react';
 import { Rocket, Star, Calendar, Globe, Sparkles, Briefcase } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { SOCIAL_LINKS } from '../../data';
+import gabrielImg from '../../assets/gabriel02.jpg';
 
 const Hero: React.FC = () => {
   const cardRef = useRef<HTMLDivElement>(null);
@@ -181,7 +182,7 @@ const Hero: React.FC = () => {
                       <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-gray-800 to-black p-1 shadow-xl ring-4 ring-white/5">
                         <div className="w-full h-full bg-black rounded-xl flex items-center justify-center overflow-hidden relative">
                           <img
-                            src="/images/gabriel.png"
+                            src={gabrielImg}
                             alt="Gabriel Mota"
                             className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110"
                           />

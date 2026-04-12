@@ -1,5 +1,6 @@
 import React from 'react';
 import { Award, Briefcase, CheckCircle, ArrowRight } from 'lucide-react';
+import gabrielImg from '@/src/assets/gabriel02.jpg';
 
 const About: React.FC = () => {
   return (
@@ -18,7 +19,11 @@ const About: React.FC = () => {
             
             <div className="relative aspect-[3/4] rounded-[1.8rem] overflow-hidden bg-white shadow-2xl shadow-gray-200/50 border border-white">
               <div className="w-full h-full bg-gray-100 flex items-center justify-center relative overflow-hidden">
-              <div className="absolute inset-0 bg-[url('https://github.com/gpm0x.png')] bg-cover bg-center transition-all duration-700 hover:scale-105"></div>
+              <img 
+                src={gabrielImg} 
+                alt="Gabriel Mota" 
+                className="absolute inset-0 w-full h-full object-cover transition-all duration-700 hover:scale-105" 
+              />
                  
                  <div className="absolute bottom-8 left-8 right-8">
                     <div className="bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-xl">

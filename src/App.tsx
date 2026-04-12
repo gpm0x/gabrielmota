@@ -127,6 +127,7 @@ const App: React.FC = () => {
         </div>
       </section>
 
+
       <Footer />
     </div>
   );

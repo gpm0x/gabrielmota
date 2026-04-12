@@ -1,36 +1,64 @@
 import React from 'react';
-import { Layout, Smartphone, Cpu, Palette, ArrowRight } from 'lucide-react';
+import { Layout, Smartphone, Cpu, Palette, ArrowRight, Check } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const SERVICES = [
   {
     icon: Layout,
     title: "Página de Vendas",
+    subtitle: "Conversão & Autoridade",
     description: "Sua página de vendas é onde a mágica acontece. Apresente seu produto de forma convincente e converta visitantes em clientes.",
-    pillars: ["Estrutura Completa", "Design único de alto padrão", "Copy Colaborativa", "Otimização de Conversão"],
-    gradient: "from-blue-500 to-indigo-500"
+    pillars: ["Estrutura de Copy Vendedora", "Design Único de Alto Padrão", "Foco Total em Conversão", "Otimização de Velocidade"],
+    gradient: "from-blue-600 to-indigo-600"
   },
   {
     icon: Smartphone,
     title: "E-commerce",
-    description: "Sua loja virtual completa, com design moderno e alta performance.",
-    pillars: ["Design de Alto Padrão", "Velocidade Extrema", "Integração de CRM", "Foco em Vendas"],
-    gradient: "from-purple-500 to-pink-500"
+    subtitle: "Vendas Online Escaláveis",
+    description: "Sua loja virtual completa, com design moderno e alta performance para escala nacional ou internacional.",
+    pillars: ["Design de Alto Padrão", "Velocidade Extrema (PageSpeed)", "Integração de Métodos de Pagamento", "Foco em Experiência de Compra"],
+    gradient: "from-purple-600 to-pink-600",
   },
   {
     icon: Cpu,
     title: "Site Institucional",
+    subtitle: "Branding & Presença Digital",
     description: "A base da sua presença online. Um site que reflete a essência da sua organização com elegância e confiança.",
-    pillars: ["Branding Consistente", "UX Excepcional", "SEO Estratégico", "Painel de Controle"],
-    gradient: "from-emerald-500 to-teal-500"
+    pillars: ["Branding Consistente", "UX Excepcional", "SEO Estratégico", "Painel de Gestão (CMS)"],
+    gradient: "from-emerald-600 to-teal-600",
+    isPopular: true,
   },
   {
     icon: Palette,
     title: "Sistemas sob-medida",
+    subtitle: "Automação & Processos",
     description: "Desenvolvimento de sistemas personalizados para atender às necessidades específicas do seu negócio.",
-    pillars: ["Design System", "Prototipagem", "Interface Moderna", "Automação de Processos"],
-    gradient: "from-orange-500 to-red-500"
+    pillars: ["Design System Próprio", "Prototipagem de Fluxos", "Interface Moderna & Ágil", "Automação de Processos Internos"],
+    gradient: "from-orange-600 to-red-600",
   }
 ];
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15
+    }
+  }
+};
+
+const cardVariants = {
+  hidden: { y: 30, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.8,
+      ease: [0.215, 0.61, 0.355, 1]
+    }
+  }
+};
 
 const Services: React.FC = () => {
   return (
@@ -52,54 +80,83 @@ const Services: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 lg:gap-12">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10"
+        >
           {SERVICES.map((service, index) => (
-            <div
+            <motion.div
               key={index}
-              className="group p-8 md:p-10 rounded-[2.5rem] bg-gray-50 border border-gray-100 hover:bg-white hover:shadow-2xl hover:shadow-gray-200/50 transition-all duration-300 relative overflow-hidden"
+              variants={cardVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              whileHover={{ y: -8, transition: { duration: 0.3 } }}
+              className="group relative h-full flex flex-col p-8 md:p-10 rounded-[3rem] bg-gray-50 border border-gray-100/80 hover:bg-white hover:shadow-2xl hover:shadow-gray-200/50 transition-all duration-500 overflow-hidden"
             >
-              <div className="flex flex-col md:flex-row gap-8">
-                <div className="flex-1">
-                  <div className={`w-16 h-16 rounded-2xl bg-white shadow-sm flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300`}>
-                    <service.icon className="text-gray-900" size={30} strokeWidth={1.5} />
-                  </div>
+              {/* Popular Badge */}
+              {service.isPopular && (
+                <div className="absolute top-8 right-8 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-indigo-600 text-white text-[10px] font-black uppercase tracking-widest shadow-lg shadow-indigo-200 z-20">
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
+                  </span>
+                  Mais Procurado
+                </div>
+              )}
 
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-indigo-600 transition-colors">
+              {/* Icon & Title Area */}
+              <div className="flex items-center gap-5 mb-8">
+                <div className={`w-14 h-14 rounded-2xl bg-white shadow-sm flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 ring-1 ring-black/5`}>
+                  <service.icon className="text-gray-900" size={26} strokeWidth={1.5} />
+                </div>
+                <div>
+                  <span className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-400 block mb-0.5">{service.subtitle}</span>
+                  <h3 className="text-2xl font-display font-bold text-gray-900 leading-tight">
                     {service.title}
                   </h3>
-
-                  <p className="text-gray-500 leading-relaxed mb-8">
-                    {service.description}
-                  </p>
-
-                  <a
-                    href="https://wa.me/5511954802686?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20serviço%20de%20"
-                    target="_blank"
-                    className="inline-flex items-center gap-2 text-sm font-bold text-indigo-600 group/link"
-                  >
-                    <span>Quero começar</span>
-                    <ArrowRight className="group-hover/link:translate-x-1 transition-transform" size={16} />
-                  </a>
-                </div>
-
-                <div className="flex-1 bg-white/50 backdrop-blur-sm rounded-3xl p-6 border border-gray-200/50">
-                  <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Diferenciais</p>
-                  <ul className="space-y-4">
-                    {service.pillars.map((pillar, pIdx) => (
-                      <li key={pIdx} className="flex items-center gap-3 text-sm text-gray-600 font-medium tracking-tight">
-                        <div className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${service.gradient}`}></div>
-                        {pillar}
-                      </li>
-                    ))}
-                  </ul>
                 </div>
               </div>
 
-              {/* Decorative Gradient Side */}
-              <div className={`absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b ${service.gradient} opacity-20`}></div>
-            </div>
+              <p className="text-gray-500 leading-relaxed mb-10 text-lg line-clamp-3">
+                {service.description}
+              </p>
+
+              {/* Pillars (Feature List) */}
+              <div className="flex-grow space-y-4 mb-10 bg-white/50 backdrop-blur-sm rounded-3xl p-6 border border-gray-200/50 group-hover:border-indigo-100 group-hover:bg-indigo-50/10 transition-colors">
+                {service.pillars.map((pillar, pIdx) => (
+                  <div key={pIdx} className="flex items-start gap-3">
+                    <div className={`mt-1 flex-shrink-0 w-4 h-4 rounded-full flex items-center justify-center bg-gradient-to-br ${service.gradient} text-white`}>
+                      <Check size={10} strokeWidth={3} />
+                    </div>
+                    <span className="text-sm text-gray-700 font-medium leading-tight">{pillar}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* CTA */}
+              <div className="pt-6 border-t border-gray-100 flex justify-end">
+                <a
+                  href={`https://wa.me/5511954802686?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20serviço%20de%20${encodeURIComponent(service.title)}`}
+                  target="_blank"
+                  className="relative group/btn overflow-hidden px-8 py-3.5 rounded-2xl bg-gray-900 text-white font-bold text-sm shadow-xl shadow-gray-200 transition-all duration-300 hover:scale-105 active:scale-95"
+                >
+                  <div className={`absolute inset-0 bg-gradient-to-r ${service.gradient} opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300`}></div>
+                  <span className="relative z-10 flex items-center gap-2">
+                    Contratar Agora
+                    <ArrowRight className="group-hover/btn:translate-x-1 transition-transform" size={16} />
+                  </span>
+                </a>
+              </div>
+
+              {/* Decorative Background Accent */}
+              <div className={`absolute -right-20 -bottom-20 w-40 h-40 bg-gradient-to-br ${service.gradient} opacity-[0.03] rounded-full blur-3xl transition-opacity duration-500 group-hover:opacity-[0.08]`}></div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
       </div>
     </section>
