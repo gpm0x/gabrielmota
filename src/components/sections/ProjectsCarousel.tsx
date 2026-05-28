@@ -52,7 +52,7 @@ const PROJECTS = [
         description: "Landing page de alto padrão para Eliel Nicolas. Objetivo é mostrar mais sobre este empreendedor.",
         image: elielNicolasImg,
         tags: ["ReactJS", "TypeScript", "Framer Motion", "Tailwind"],
-        link: "https://elielnicolas.com.br/",
+        link: "https://elielnicolas.vercel.app/",
         accent: "from-green-500 to-emerald-700"
     },
     {
